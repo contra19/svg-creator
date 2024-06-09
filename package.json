@@ -1,0 +1,21 @@
+{
+  "name": "SVG Generator",
+  "version": "1.0.0",
+  "description": "Generates a SVG file based on user input",
+  "main": "index.js",
+  "dependencies": {
+    "color-name": "^2.0.0",
+    "colors": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "contra19",
+  "license": "MIT"
+}
