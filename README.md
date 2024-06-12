@@ -66,6 +66,8 @@ svg-logo-generator/
 ├── package.json
 └── logo.svg
 ```
+## Sample Video
+[Sample Video](https://drive.google.com/file/d/1X65RzqFbJDsSsT1LT0lRkGSwFbWThZvi/view?usp=drive_link)
 
 ## Code Structure
 
