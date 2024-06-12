@@ -4,6 +4,7 @@ const colors = require('colors');
 const fs = require('fs');
 const { Triangle, Circle, Square } = require('./lib/shapes');
 const { validateColorInput, validateTextInput } = require('./lib/input-handler');
+const path = require('path');
 
 
 // Create an array of questions for user input
@@ -62,9 +63,27 @@ async function init() {
     const svgContent = shapeInstance.render(answers.text, answers.textColor);
 
     // Write SVG content to a file named 'logo.svg'
-    fs.writeFileSync('logo.svg', svgContent);
+    logoFileName = 'logo.svg';
+    fs.writeFileSync(logoFileName, svgContent);
 
     console.log(colors.green('SVG file generated successfully!'));
+
+    // Ensure the Examples folder exists
+    const examplesDir = path.join(__dirname, 'Examples');
+    if (!fs.existsSync(examplesDir)) {
+        fs.mkdirSync(examplesDir);
+    }
+
+    // Count the number of existing example files
+    const exampleFiles = fs.readdirSync(examplesDir).filter(file => file.startsWith('example_logo_') && file.endsWith('.svg'));
+    const nextFileNumber = exampleFiles.length + 1;
+    const newFileName = `example_logo_${nextFileNumber}.svg`;
+
+    // Copy and rename the file to the Examples folder
+    const newFilePath = path.join(examplesDir, newFileName);
+    fs.copyFileSync(logoFileName, newFilePath);
+
+    console.log(colors.green(`SVG file copied and renamed successfully to ${newFileName}!`));
 }
 
 // Function call to initialize app
