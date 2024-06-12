@@ -22,7 +22,7 @@ The SVG Logo Generator is a command-line application that allows users to create
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/contra19/svg-logo-generator.git
+    git clone https://github.com/contra19/svg-creator.git
     cd svg-logo-generator
     ```
 
